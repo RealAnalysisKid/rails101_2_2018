@@ -6,6 +6,11 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def edit
+    @group = Group.find(params[:group_id])
+    @post = Post.new
+  end
+
   def create
     @group = Group.find(params[:group_id])
     @post = Post.new(post_params)
@@ -18,6 +23,8 @@ class PostsController < ApplicationController
       render :new
     end
   end
+
+
 
   private
 
